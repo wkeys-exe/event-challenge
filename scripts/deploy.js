@@ -23,7 +23,11 @@ async function main() {
   eventTest.on("Transfer", (from, to, amount) => {
     console.log(`New transfer: ${from} ${to} ${amount} WEI`);
   })
-
+  
+  eventTest.on("Buy", (buyer, tokenName, quantity) => {
+    console.log(`New buy: ${buyer} bought ${quantity.toString()} of ${tokenName}`);
+  });
+  
   console.log(
     `Contract deployed to ${eventTest.address}`
   );
